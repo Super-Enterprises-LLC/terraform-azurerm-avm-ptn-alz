@@ -64,10 +64,8 @@ resource "azapi_resource" "policy_assignments" {
 
   lifecycle {
     ignore_changes = [
-      body.properties.metadata.createdBy,
-      body.properties.metadata.createdOn,
-      body.properties.metadata.updatedBy,
-      body.properties.metadata.updatedOn,
+      body,
+      replace_triggers_external_values
     ]
   }
   depends_on = [

@@ -53,8 +53,10 @@ resource "azapi_resource" "policy_role_assignments" {
   }
 
   lifecycle {
-    # https://github.com/Azure/terraform-provider-azapi/issues/671
-    ignore_changes = [output.properties.updatedOn]
+    ignore_changes = [
+      body,
+      replace_triggers_external_values
+    ]
   }
   depends_on = [terraform_data.policy_role_assignments_dependencies]
 }
