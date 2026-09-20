@@ -28,4 +28,11 @@ resource "azapi_resource" "policy_set_definitions" {
   depends_on = [
     time_sleep.after_policy_definitions
   ]
+
+  lifecycle {
+    ignore_changes = [
+      body,
+      replace_triggers_external_values
+    ]
+  }
 }

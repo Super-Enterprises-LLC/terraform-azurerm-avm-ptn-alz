@@ -33,4 +33,10 @@ resource "azapi_resource" "role_definitions" {
   depends_on = [
     time_sleep.after_management_groups
   ]
+
+  lifecycle {
+    ignore_changes = [
+      body
+    ]
+  }
 }

@@ -50,4 +50,10 @@ resource "azapi_resource" "management_group_role_assignments" {
   depends_on = [
     azapi_resource.role_definitions,
   ]
+
+  lifecycle {
+    ignore_changes = [
+      body
+    ]
+  }
 }

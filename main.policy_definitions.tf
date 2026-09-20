@@ -27,4 +27,10 @@ resource "azapi_resource" "policy_definitions" {
   depends_on = [
     time_sleep.after_management_groups
   ]
+
+  lifecycle {
+    ignore_changes = [
+      body
+    ]
+  }
 }
