@@ -65,6 +65,7 @@ resource "azapi_resource" "policy_assignments" {
   lifecycle {
     ignore_changes = [
       body,
+      identity,
       replace_triggers_external_values
     ]
   }
